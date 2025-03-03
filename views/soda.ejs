@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day</title>
+    <style>
+        body {
+            background: url("img/sodaavatar.jpg") no-repeat center center/cover;
+            text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 1.5rem;
+            margin: 10px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+        }
+        .video-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            width: 80%;
+            max-width: 1000px;
+            justify-content: center;
+            align-items: center;
+        }
+        .video-container video {
+            max-width: 300px;
+            justify-self: center;
+            align-self: center;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        video {
+            width: 60%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Màn hình chào */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("img/sodaavatar.jpg") no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            font-size: 1.5rem;
+            z-index: 10;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .overlay::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+        .overlay h2 {
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+        .overlay p {
+            font-size: 1.2rem;
+        }
+        /* Ẩn GIF khi chưa click */
+        #countdown {
+            display: none;
+            width: 200px;
+            height: auto;
+        }
+        #main-content {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+        }
+        #countdown-timer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    z-index: 20;
+    display: none;
+}
+
+#special-text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    display: none;
+    z-index: 20;
+}
+
+#special-image {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: auto;
+    z-index: 20;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+#background-blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Làm mờ nền */
+    z-index: 15;
+    display: none;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Màn hình chào -->
+    <div class="overlay" id="overlay">
+        <h2>Happy Valentine's Day, Soda ❤️</h2>
+        <p>Chúc chị bình an đi qua xuân thu bốn mùa,<br>
+            có thể ngắm ngàn vạn phong cảnh rực rỡ. Love❤️</p>
+        <p>Click vào màn hình để tiếp tục</p>
+        <img id="countdown" src="img/countdown.gif" alt="Countdown">
+    </div>
+
+    <!-- Nội dung chính -->
+    <div id="main-content">
+        <h1>Happy Valentine's Day, Soda ❤️</h1>
+        <div class="video-container">
+            <% const videos = ["soda1.mp4", "soda2.mp4", "soda3.mp4", "soda4.mp4", "soda5.mp4", "soda6.mp4"]; %>
+            <% videos.forEach(video => { %>
+                <video muted playsinline preload="none">
+                    <source src="/img/<%= video %>" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            <% }); %>
+        </div>
+        <div id="background-blur"></div>
+        <div id="countdown-timer"></div>
+        <div id="special-text">Hết rồi, iu nhiềuu nắmmmm ❤️</div>
+        <img id="special-image" src="" alt="Special Image">
+
+
+
+        <audio id="background-music" loop>
+            <source src="/img/sound.mp4" type="audio/mp4">
+        </audio>
+    </div>
+
+    <script>
+        function openFullscreen() {
+            const elem = document.documentElement;
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) { // Firefox
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) { // Chrome, Safari, Opera
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { // IE/Edge
+                elem.msRequestFullscreen();
+            }
+        }
+    
+        document.addEventListener("click", () => {
+            openFullscreen(); // Bật full màn hình khi nhấp vào trang
+    
+            const overlay = document.getElementById("overlay");
+            const countdown = document.getElementById("countdown");
+            const mainContent = document.getElementById("main-content");
+    
+            // Hiển thị GIF
+            countdown.style.display = "block";
+    
+            // Sau 3 giây, ẩn overlay và hiện nội dung chính
+            setTimeout(() => {
+                overlay.style.display = "none";
+                mainContent.style.display = "flex";
+    
+                // Bắt đầu phát video và nhạc
+                document.querySelectorAll("video").forEach(video => {
+                    video.play();
+                });
+                
+                
+                const audio = document.getElementById("background-music");
+                if (audio.paused) {
+                    audio.play();
+                }
+    
+                setTimeout(() => {
+                    const countdownTimer = document.getElementById("countdown-timer");
+                    countdownTimer.style.display = "block";
+    
+                    let count = 20;
+                    const countdownInterval = setInterval(() => {
+                        countdownTimer.textContent = count;
+                        if (count === 0) {
+                            clearInterval(countdownInterval);
+                            countdownTimer.style.display = "none";
+    
+                            // Làm mờ nền
+                            document.getElementById("background-blur").style.display = "block";
+    
+                            // Hiển thị chữ "Hết rồi yêu lắm"
+                            const specialText = document.getElementById("special-text");
+                            specialText.style.display = "block";
+    
+                            setTimeout(() => {
+                                specialText.style.display = "none";
+    
+                                // Hiển thị ảnh hieu1.jpg
+                                const specialImage = document.getElementById("special-image");
+                                specialImage.src = "img/hieu1.jpg";
+                                specialImage.style.display = "block";
+    
+                                setTimeout(() => {
+                                    // Đổi sang ảnh hieu2.jpg
+                                    specialImage.src = "img/hieu2.jpg";
+                                    setTimeout(() => {
+                                        specialImage.src = "img/hieu3.jpg";
+
+                                        // Hiển thị dòng chữ ngay sau khi đổi ảnh
+                                        setTimeout(() => {
+                                            specialImage.style.display = "none";
+                                            specialText.innerHTML = "Giờ hết thật rồi nè, iu nhiềuu nắmmmm ❤️<br>Click để say yêu em 🌌";
+
+                                            
+                                            specialText.style.display = "block";
+    specialText.style.visibility = "visible";
+    specialText.style.opacity = "1";
+                                            document.addEventListener("click", () => {
+        window.location.href = "https://www.facebook.com/messages/t/hieufall";
+    });
+                                        }, 2000);
+                                    }, 2000);
+
+
+                                }, 2000);
+                            }, 2500);
+                        }
+                        count--;
+                    }, 1000);
+                }, 1000);
+    
+            }, 6000); // Thời gian delay theo countdown
+        }, { once: true }); // Đảm bảo chỉ chạy 1 lần
+    </script>
+    
+</body>
+</html>

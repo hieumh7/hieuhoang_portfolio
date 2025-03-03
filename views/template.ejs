@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <h1><%= title %></h1>
+    <p><%= body %></p>
+    <% if (mediaPath) { %>
+        <% if (mediaPath.endsWith('.mp4')) { %>
+            <video controls width="300">
+                <source src="<%= mediaPath %>" type="video/mp4">
+            </video>
+        <% } else { %>
+            <img src="<%= mediaPath %>" width="300" alt="Uploaded media">
+        <% } %>
+    <% } %>
+</body>
+</html>

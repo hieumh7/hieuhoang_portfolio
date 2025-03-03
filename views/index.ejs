@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Hieu Hoang Profile</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Hieu Hoang Profile" name="keywords">
+    <meta content="Hieu Hoang Profile" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link id="theme-style" href="/css/<%= theme === 'dark' ? 'style1.css' : 'style.css' %>" rel="stylesheet">
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="51">
+    
+
+    
+    <!-- Navbar End -->
+    <!-- <div class="header"><ul class=" icon-menu revealator-slideup revealator-once revealator-delay1" role="tablist"><li class="icon-box" role="tab" id="tab:R2jm:0" aria-selected="false" aria-disabled="false" aria-controls="panel:R2jm:0" data-rttab="true"><i class="fa fa-home"></i><h2></h2></li><li class="icon-box" role="tab" id="tab:R2jm:1" aria-selected="false" aria-disabled="false" aria-controls="panel:R2jm:1" data-rttab="true"><i class="fa fa-user"></i><h2></h2></li><li class="icon-box" role="tab" id="tab:R2jm:2" aria-selected="false" aria-disabled="false" aria-controls="panel:R2jm:2" data-rttab="true"><i class="fa fa-briefcase"></i><h2></h2></li><li class="icon-box react-tabs__tab--selected" role="tab" id="tab:R2jm:3" aria-selected="true" aria-disabled="false" aria-controls="panel:R2jm:3" data-rttab="true" tabindex="0"><i class="fa fa-envelope-open"></i><h2></h2></li><li class="icon-box" role="tab" id="tab:R2jm:4" aria-selected="false" aria-disabled="false" aria-controls="panel:R2jm:4" data-rttab="true"><i class="fa fa-comments"></i><h2></h2></li></ul></div> -->
+    <%- include('partials/navbar') %>
+    
+
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home" style="min-height: 100vh;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
+                    <img class="img-fluid w-100 rounded-circle shadow-sm" src="img/profile.jpg" alt="">
+                </div>
+                <div class="col-lg-7 text-center text-lg-left">
+                    <h3 class="text-white1 font-weight-normal mb-3">I'm</h3>
+                    <h1 class="display-3 text-uppercase text-primary mb-2" style="-webkit-text-stroke: 2px #ffffff;">Hieu Hoang</h1>
+                    <h1 class="typed-text-output d-inline font-weight-lighter text-white1"></h1>
+                    <div class="typed-text d-none">Back-End Developer, Web Developer</div>
+                    <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
+                        <a href="/path-to-your-cv/CV_Hoang Dinh Hieu.pdf" download="CV_Hoang Dinh Hieu.pdf" class="btn btn-outline-light mr-4">
+                            Download CV
+                        </a>
+                        
+                        <a href="https://github.com/HieuHoang1207" class="btn btn-outline-light mr-5">View My GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5" id="about">
+        <div class="container">
+            <div class="position-relative d-flex align-items-center justify-content-center">
+                <h1 class="display-1 text-uppercase text-white text-stroke">About</h1>
+                <h1 class="position-absolute text-uppercase text-primary">About Me</h1>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-5 pb-4 pb-lg-0" id="padding-about">
+                    <img class="img-fluid rounded w-100" src="img/about1.jpg" alt="">
+                </div>
+                <div class="col-lg-7" id="padding-about">
+                    <h3 class="mb-4 color-444">Back-End Developer & Web Developer</h3>
+                    <p>I am a senior university student majoring in Information Technology, possessing strong logical skills and programming thinking. I completed a 6-month internship as a Back-End Developer using Node.js, NestJS and am ready to work full-time. I am responsible, enthusiastic, and always passionate about learning.</p>
+                    <div class="row mb-6">
+                        <div class="col-sm-6 py-2"><h6 class="about-label">Name: <span class="text-secondary">Hieu Hoang</span></h6></div>
+                        <div class="col-sm-6 py-2"><h6 class="about-label">Birthday: <span class="text-secondary">12 July 2002</span></h6></div>
+                        <div class="col-sm-6 py-2"><h6 class="about-label">Degree: <span class="text-secondary">Fresher</span></h6></div>
+                        <div class="col-sm-6 py-2"><h6 class="about-label">Experience: <span class="text-secondary">6 month</span></h6></div>
+                        <div class="col-sm-6 py-2"><h6 class="about-label">
+                            Phone: 
+                            <a href="tel:+0917364860" class="text-secondary">+0917364860</a>
+                          </h6></div>
+                        <div class="col-sm-6 py-2"><h6 class="about-label">
+                            Email: 
+                            <a href="mailto:hieu.mh7@gmail.com" class="text-secondary">hieu.mh7@gmail.com</a>
+                          </h6></div>
+                        <div class="col-sm-6 py-2"><h6 class="about-label">Address: <span class="text-secondary">470 Tran Dai Nghia Street, Hoa Quy Ward, Ngu Hanh Son District, Da Nang.</span></h6></div>
+                        <div class="col-sm-6 py-2"><h6 class="about-label">
+                            Github: 
+                            <a href="https://github.com/HieuHoang1207" class="text-secondary" target="_blank" rel="noopener noreferrer">
+                              https://github.com/HieuHoang1207
+                            </a>
+                          </h6>
+                          </div>
+                    </div>
+                    <a href="mailto:hieu.mh7@gmail.com" class="btn btn-outline-primary ml-3">Hire Me</a>
+
+                    <!-- <a href="" class="btn btn-outline-primary">Learn More</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Qualification Start -->
+    <div class="container-fluid py-5" id="qualification">
+        <div class="container">
+            <div class="position-relative d-flex align-items-center justify-content-center">
+                <h1 class="display-1 text-uppercase text-white text-stroke">Quality</h1>
+                <h1 class="position-absolute text-uppercase text-primary">Education & Expericence</h1>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h3 class="mb-4 color-444">My Education</h3>
+                    <div class="border-left border-primary pt-2 pl-4 ml-2">
+                        <div class="position-relative mb-4">
+                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
+                            <h5 class="font-weight-bold mb-1">Software Engineer</h5>
+                            <div class="about-label"><p class="mb-2"><strong>Vietnam-Korea University Of Information And Communication Technology</strong> | <small>2020 - 2025</small></p></div>
+                            <p>Studying Software Engineering with a focus on backend development, database management, and system architecture.
+                                Gained hands-on experience in Node.js, NestJS, MySQL, PostgreSQL, and MongoDB.
+                                Developed strong problem-solving, teamwork, and project management skills.</p>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="mb-4 color-444">My Expericence</h3>
+                    <div class="border-left border-primary pt-2 pl-4 ml-2">
+                        <div class="position-relative mb-4">
+                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
+                            <h5 class="font-weight-bold mb-1">Intern Backend Developer</h5>
+                            <div class="about-label"><p class="mb-2"><strong>Gooup1 Software</strong> | <small>2024 - 2025</small></p></div>
+                            <p>Developed backend services using Node.js and NestJS.
+                                Designed and optimized database schemas using MySQL, PostgreSQL, and MongoDB.
+                                Built and maintained RESTful APIs, ensuring scalability and security.
+                                Implemented authentication and authorization mechanisms (JWT, OAuth2).</p>
+                        </div>
+                        <div class="position-relative mb-4">
+                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -32px;"></i>
+                            <h5 class="font-weight-bold mb-1">School project</h5>
+                            <div class="about-label"><p class="mb-2"><strong>Building a 3.0 e-commerce website application electronics blockchain</strong> | <small>2024</small></p></div>
+                            <p>Developed a modern e-commerce platform that enables buyers to easily conduct transactions and sellers to efficiently manage their products online.
+                                Integrated blockchain technology to enhance transparency and security, ensuring safe and reliable transactions.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Qualification End -->
+<div class="container-fluid py-5" id="skill">
+    <div class="container">
+        <div class="position-relative d-flex align-items-center justify-content-center">
+            <h1 class="display-1 text-uppercase text-white text-stroke">Skills</h1>
+            <h1 class="position-absolute text-uppercase text-primary">My Skills</h1>
+        </div>
+        <div class="row">
+            <!-- Frontend Development -->
+            <div class="col-6 mx-auto"> 
+                <h3 class="mb-4 color-444 text-center">Backend Development</h3>
+                <div class="border border-primary p-4 shadow" style="border-radius: 8px;">
+                    <ul class="mb-0 ps-3">
+                        <li class="py-2">Server-Side Frameworks: Node.js, NestJS</li>
+                        <li class="py-2">Databases: MySQL, MongoDB, PostgreSQL, Firebase</li>
+                        <li class="py-2">Version Control: GitHub</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-6 mx-auto"> 
+                <h3 class="mb-4 color-444 text-center">Frontend Development</h3>
+                <div class="border border-primary p-4 shadow" style="border-radius: 8px;">
+                    <ul class="mb-0 ps-3">
+                        <li class="py-2">Markup & Styling: HTML, CSS, Bootstrap</li>
+                        <li class="py-2">Programming Languages: JavaScript, TypeScript</li>
+                        <li class="py-2">Frontend Framework: ReactJS</li>
+                        <li class="py-2">Version Control: GitHub</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        </div>
+        
+    </div>
+</div>
+
+
+    <!-- Portfolio Start -->
+    <div class="container-fluid pt-5 pb-3" id="portfolio">
+        <div class="container">
+            <div class="position-relative d-flex align-items-center justify-content-center">
+                <h1 class="display-1 text-uppercase text-white text-stroke">Gallery</h1>
+                <h1 class="position-absolute text-uppercase text-primary">My Portfolio</h1>
+            </div>
+            
+            <div class="row portfolio-container">
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
+                    <div class="position-relative overflow-hidden mb-2">
+                        <img class="img-fluid rounded w-100 portfolio-image" src="img/portfolio-7.jpg" alt="">
+                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+                            <a href="img/portfolio-7.jpg" data-lightbox="portfolio">
+                                <i class="fa fa-plus text-white1" style="font-size: 60px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
+                    <div class="position-relative overflow-hidden mb-2">
+                        <img class="img-fluid rounded w-100 portfolio-image" src="img/portfolio-8.jpg" alt="">
+                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+                            <a href="img/portfolio-8.jpg" data-lightbox="portfolio">
+                                <i class="fa fa-plus text-white1" style="font-size: 60px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
+                    <div class="position-relative overflow-hidden mb-2">
+                        <img class="img-fluid rounded w-100 portfolio-image" src="img/portfolio-9.jpg" alt="">
+                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+                            <a href="img/portfolio-9.jpg" data-lightbox="portfolio">
+                                <i class="fa fa-plus text-white1" style="font-size: 60px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
+                    <div class="position-relative overflow-hidden mb-2">
+                        <img class="img-fluid rounded w-100 portfolio-image" src="img/portfolio-10.jpg" alt="">
+                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+                            <a href="img/portfolio-10.jpg" data-lightbox="portfolio">
+                                <i class="fa fa-plus text-white1" style="font-size: 60px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
+                    <div class="position-relative overflow-hidden mb-2">
+                        <img class="img-fluid rounded w-100 portfolio-image" src="img/portfolio-16.jpg" alt="">
+                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+                            <a href="img/portfolio-16.jpg" data-lightbox="portfolio">
+                                <i class="fa fa-plus text-white1" style="font-size: 60px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
+                    <div class="position-relative overflow-hidden mb-2">
+                        <img class="img-fluid rounded w-100 portfolio-image" src="img/portfolio-14.png" alt="">
+                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+                            <a href="img/portfolio-14.png" data-lightbox="portfolio">
+                                <i class="fa fa-plus text-white1" style="font-size: 60px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-primary text-white mt-5 py-5 px-sm-3 px-md-5 section-with-border" id="portfolio">
+        <div class="container text-center py-5">
+            <div class="d-flex justify-content-center mb-4">
+                <a class="btn btn-light btn-social mr-2" href="https://www.facebook.com/hieufall"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-light btn-social mr-2" href="www.linkedin.com/in/hiếu-hoàng-8301a3306"><i class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-light btn-social" href="https://www.instagram.com/hieufall/"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="d-flex justify-content-center mb-3">
+                <a class="text-white1" href="#">Privacy</a>
+                <span class="px-3">|</span>
+                <a class="text-white1" href="#">Terms</a>
+                <span class="px-3">|</span>
+                <a class="text-white1" href="#">FAQs</a>
+                <span class="px-3">|</span>
+                <a class="text-white1" href="#">Help</a>
+            </div>
+            <p class="m-0">&copy; <a class="text-white1 font-weight-bold" href="#">Hieu Hoang Profile</a><span class="text-white1">. All Rights Reserved.</span>
+            </p>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Scroll to Bottom -->
+    <i class="fa fa-2x fa-angle-down text-white scroll-to-bottom"></i>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-outline-dark px-0 back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/typed/typed.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script>
+        function copyEmail() {
+          navigator.clipboard.writeText("hieu.mh7@gmail.com");
+          alert("Email đã được sao chép!");
+        }
+      </script>
+</body>
+
+</html>

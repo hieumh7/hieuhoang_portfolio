@@ -1,0 +1,490 @@
+body {
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  overflow: auto; /* Cho phép cuộn */
+}
+h1 {
+  font-size: 1.5rem;
+  margin: 10px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 4rem;
+  font-family: 'Agbalumo', serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.video-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 80%;
+  max-width: 1000px;
+  justify-content: center;
+  align-items: center;
+}
+.video-container video {
+  max-width: 300px;
+  justify-self: center;
+  align-self: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+  border: 4px solid #bb0000; /* Viền đỏ đậm như giấy thư */
+  border-radius: 15px;
+}
+.video-container img {
+  max-width: 300px;
+  justify-self: center;
+  align-self: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+  border: 4px solid #bb0000; /* Viền đỏ đậm như giấy thư */
+  border-radius: 15px;
+}
+
+video {
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Màn hình chào */
+.overlay {
+  position: relative; /* Không còn là lớp cố định */
+  min-height: 100vh; /* Đảm bảo chiếm hết chiều cao màn hình */
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('/img/background1.png') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+.overlay h2 {
+  margin-bottom: 10px;
+  color: #111;
+  margin-top: 10px;
+  font-size: 4rem;
+  font-family: 'Agbalumo', serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.overlay p {
+  font-size: 1.3rem;
+  color: #111;
+  font-family: 'Playwrite DE SAS', serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+/* Ẩn GIF khi chưa click */
+#countdown {
+  display: none;
+  width: 200px;
+  height: auto;
+}
+#main-content {
+  background: url('/img/background.png') no-repeat center center/cover;
+  display: block; /* Luôn hiển thị */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh; /* Độ dài bằng 1 màn hình */
+  padding: 20px 0;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.5); /* Đường gạch ngang */
+}
+#main-content2 {
+  background: url('/img/background.png') no-repeat center center/cover;
+  display: block; /* Luôn hiển thị */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh; /* Độ dài bằng 1 màn hình */
+  padding: 20px 0;
+  position: relative;
+  z-index: 10;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.5); /* Đường gạch ngang */
+}
+#main-content3 {
+  background: url('/img/background7.png') no-repeat center center/cover;
+  display: block; /* Luôn hiển thị */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 11vh; /* Độ dài bằng 1 màn hình */
+  padding: 20px 0;
+  position: relative;
+  z-index: 10;
+}
+#main-content4 {
+  background: url('/img/background7.png') no-repeat center center/cover;
+  display: block; /* Luôn hiển thị */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 8vh; /* Độ dài bằng 1 màn hình */
+  padding: 20px 0;
+  position: relative;
+  z-index: 10;
+}
+
+#countdown-timer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+  z-index: 20;
+  display: none;
+}
+
+#special-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  z-index: 20;
+  font-size: 3rem;
+  font-family: 'Playwrite DE SAS', serif;
+  font-weight: 300;
+  text-align: center;
+
+  /* Bo viền + nền */
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 8px;
+
+  /* Kích thước box */
+  max-width: 700px;
+  min-width: 500px;
+  width: 50%; /* Giữ linh hoạt, không dùng !important */
+  padding: 10px; /* Thêm padding để chữ không sát viền */
+  box-sizing: border-box;
+}
+#special-text2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  display: block;
+  z-index: 20;
+  font-size: 3rem;
+  font-family: 'Playwrite DE SAS', serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+#special-text3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  z-index: 20;
+  font-size: 3rem;
+  font-family: 'Playwrite DE SAS', serif;
+  font-weight: 300;
+  text-align: center;
+
+  /* Bo viền + nền */
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 8px;
+
+  /* Kích thước box */
+  max-width: 1000px;
+  min-width: 500px;
+  width: 50%; /* Giữ linh hoạt, không dùng !important */
+  padding: 10px; /* Thêm padding để chữ không sát viền */
+  box-sizing: border-box;
+}
+
+#special-image {
+  display: block;
+  position: absolute; /* Giữ ảnh trong main-content2 */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: auto;
+  z-index: 20;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+}
+#background-blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: block;
+}
+.valentine-box {
+  background: url('/img/background6.png') no-repeat center center/cover;
+  width: 700px; /* Đặt giới hạn chiều rộng */
+  padding: 20px;
+  border: 5px solid #aa0000; /* Viền đỏ đậm như giấy thư */
+  border-radius: 15px; /* Bo góc mềm mại */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Tạo độ nổi */
+  text-align: center;
+  word-wrap: break-word;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.valentine-box-title {
+  width: 550px; /* Đặt giới hạn chiều rộng */
+  text-align: center;
+}
+.valentine-footer {
+  width: 95%; /* Giảm bớt chiều rộng để không bị tràn */
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%); /* Căn giữa footer bên trong valentine-box */
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom-left,
+.bottom-right {
+  font-size: 1.3rem;
+  color: #111;
+  font-family: 'Playwrite DE SAS', serif;
+  font-weight: 300;
+  font-style: normal;
+  white-space: nowrap; /* Tránh xuống dòng */
+  padding: 5px 10px;
+}
+.click-text {
+  margin-bottom: 1.9rem;
+}
+
+.title-input {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  color: #111;
+  font-size: 4rem;
+  font-family: 'Agbalumo', serif;
+  font-weight: 400;
+  font-style: normal;
+  background: transparent; /* Loại bỏ màu nền */
+  border: none; /* Bỏ viền */
+  text-align: center; /* Căn giữa nội dung */
+  width: 100%; /* Chiều rộng full */
+  outline: none; /* Bỏ viền khi focus */
+  text-align: center;
+  width: 550px;
+}
+.input {
+  background: transparent !important; /* Loại bỏ màu nền */
+  border: 1px solid rgba(0, 0, 0, 0.2) !important; /* Viền nhẹ */
+  border-radius: 8px !important; /* Bo tròn góc */
+  outline: none !important; /* Bỏ viền khi focus */
+  min-height: 120px !important; /* Độ cao tối thiểu */
+  box-sizing: border-box !important; /* Đảm bảo padding không làm thay đổi kích thước */
+}
+.title-label {
+  font-size: 1.3rem;
+  color: #111;
+  font-family: 'Playwrite DE SAS', serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  background: transparent; /* Loại bỏ màu nền */
+  border: none; /* Bỏ viền */
+  resize: none; /* Không cho resize */
+  width: 100%; /* Chiều rộng full */
+  text-align: center; /* Căn giữa nội dung */
+  overflow: hidden; /* Tránh thanh cuộn */
+  outline: none; /* Bỏ viền khi focus */
+  background: transparent !important; /* Loại bỏ màu nền */
+  border-radius: 8px !important; /* Bo tròn góc */
+  outline: none !important; /* Bỏ viền khi focus */
+  min-height: 120px !important; /* Độ cao tối thiểu */
+  box-sizing: border-box !important; /* Đảm bảo padding không làm thay đổi kích thước */
+}
+.body-input {
+  font-size: 1.3rem;
+  color: #111;
+  font-family: 'Playwrite DE SAS', serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  background: transparent; /* Loại bỏ màu nền */
+  border: none; /* Bỏ viền */
+  resize: none; /* Không cho resize */
+  width: 100%; /* Chiều rộng full */
+  overflow: hidden; /* Tránh thanh cuộn */
+  outline: none; /* Bỏ viền khi focus */
+  background: transparent !important; /* Loại bỏ màu nền */
+  border: 1px solid rgba(0, 0, 0, 0.2) !important; /* Viền nhẹ */
+  border-radius: 8px !important; /* Bo tròn góc */
+  width: 100% !important; /* Chiều rộng full */
+  outline: none !important; /* Bỏ viền khi focus */
+  box-sizing: border-box !important; /* Đảm bảo padding không làm thay đổi kích thước */
+}
+.bottom-label {
+  width: 150px !important; /* Độ rộng nhỏ lại */
+  max-width: 200px; /* Giới hạn tối đa */
+  min-width: 100px; /* Không quá nhỏ */
+  display: inline-block;
+}
+.video-upload-container {
+  position: relative;
+  display: inline-block;
+}
+.image-upload-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.clickable-video {
+  width: 85%;
+  cursor: pointer;
+}
+
+.hidden-file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Ẩn input nhưng vẫn click được */
+  cursor: pointer;
+}
+
+/* Dấu + hiển thị ở giữa video */
+.upload-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  z-index: 30;
+}
+
+/* Hiệu ứng khi di chuột vào */
+.video-upload-container:hover .upload-icon {
+  background: rgba(0, 0, 0, 0.8);
+}
+.image-upload-container:hover .upload-icon {
+  background: rgba(0, 0, 0, 0.8);
+}
+/* Hiển thị tên file */
+.file-name {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #111;
+  font-weight: bold;
+}
+.font-playwrite {
+  font-size: 1.3rem;
+  color: #111;
+  font-family: 'Playwrite DE SAS', serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+button {
+  background-color: #aa0000; /* Màu đỏ hồng */
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(255, 75, 92, 0.3);
+  border: 1px solid #111;
+}
+
+button:hover {
+  background-color: #e04352; /* Đỏ đậm hơn */
+  box-shadow: 0px 6px 14px rgba(255, 75, 92, 0.5);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+.final-text {
+  font-size: 1.3rem;
+  color: #111;
+  font-family: 'Playwrite DE SAS', serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  margin-bottom: 6px;
+  margin-top: 1px;
+}
+.roboto {
+  font-size: 1.5rem;
+  color: #111;
+  font-family: 'Cormorant Upright', serif;
+  font-weight: 500;
+  font-style: normal;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+.box {
+  background: url('/img/background3.png') no-repeat center center/cover;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 5px solid #aa0000; /* Viền đỏ đậm như giấy thư */
+  border-radius: 15px; /* Bo góc mềm mại */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Tạo độ nổi */
+  text-align: center;
+  word-wrap: break-word;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

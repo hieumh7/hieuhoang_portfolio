@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Website</title>
+  </head>
+  <body>
+    <h1>Create a Website</h1>
+    <form action="/website/create" method="POST" enctype="multipart/form-data">
+      <label for="title">Title:</label>
+      <input type="text" name="title" required />
+      <br />
+
+      <label for="body">Body:</label>
+      <textarea name="body" required></textarea>
+      <br />
+      <label for="to">To:</label>
+      <input type="text" name="to" required />
+      <br />
+
+      <label for="from">From:</label>
+      <input type="text" name="from" required />
+      <br />
+
+      <label for="media"
+        >Upload Image/Video 1 (optional) ưu tiên hướng dọc/ vuông:</label
+      >
+      <input type="file" name="media" accept="image/*,video/*" />
+      <br />
+
+      <label for="media1"
+        >Upload Image/Video 2 (optional) ưu tiên hướng dọc/ vuông:</label
+      >
+      <input type="file" name="media1" accept="image/*,video/*" />
+      <br />
+
+      <label for="media2"
+        >Upload Image/Video 3 (optional) ưu tiên hướng dọc/ vuông:</label
+      >
+      <input type="file" name="media2" accept="image/*,video/*" />
+      <br />
+
+      <label for="media3">Upload Image ưu tiên hướng vuông:</label>
+      <input type="file" name="media3" accept="image/*,video/*" />
+      <br />
+      <label for="media4">Upload Image ưu tiên hướng vuông:</label>
+      <input type="file" name="media4" accept="image/*,video/*" />
+      <br />
+
+      <label for="media5">Upload Image ưu tiên hướng vuông:</label>
+      <input type="file" name="media5" accept="image/*,video/*" />
+      <br />
+
+      <label for="text1">Final text:</label>
+      <input type="text" name="text1" required />
+      <br />
+
+      <label for="text2">Final text2:</label>
+      <input type="text" name="text2" required />
+      <br />
+
+      <button type="submit">Create</button>
+    </form>
+  </body>
+</html>

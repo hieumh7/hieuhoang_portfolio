@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Cormorant+Upright:wght@300;400;500;600;700&family=Dancing+Script&family=Luckiest+Guy&family=Playwrite+DE+SAS:wght@300&family=Roboto:ital,wght@0,100..900;1,100..900&family=Send+Flowers&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/template1.css">
+  </head>
+  <body>
+    <div id="main-content4"  style="display: flex"> 
+      <div class="box">
+      <p class="roboto">Hướng dẫn: bạn hãy nhập các thông tin vào ô có sẵn, thêm ảnh/ video và nhấn submit ở cuối trang để tạo.</p>
+    </div>
+    </div>
+    <form action="/website/create" method="POST" enctype="multipart/form-data">
+      <!-- Màn hình chào -->
+      <div class="overlay" id="overlay">
+        <div class="valentine-box">
+          <img id="countdown" src="/img/countdown.gif" alt="Countdown" />
+
+          <!-- Form thêm vào trong overlay -->
+
+          <textarea name="title" required class="title-input input">
+Happy Valentine's Day, Name</textarea
+          >
+          <br />
+
+          <textarea name="body" required class="body-input">
+Chúc cậu bình an đi qua xuân thu bốn mùa, có thể ngắm ngàn vạn phong cảnh rực rỡ. Love❤️. Hết rồi, iu nhiềuu nắmmmm</textarea
+          >
+          <br />
+
+          <p class="click-text">Click vào màn hình để tiếp tục</p>
+          <div class="valentine-footer">
+            <div class="bottom-left">
+              <label for="from" class="title-label">Gửi:</label>
+              <input
+                type="text"
+                name="from"
+                value="Name"
+                required
+                class="body-input bottom-label"
+              />
+              <br />
+            </div>
+            <div class="bottom-right">
+              <label for="to" class="title-label">Tới:</label>
+              <input
+                type="text"
+                name="to"
+                value="Name"
+                required
+                class="body-input bottom-label"
+              />
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nội dung chính -->
+      <div id="hearts-container">
+        <div id="main-content" style="display: flex">
+          
+          <h1>Happy Valentine's Day, Name❤️</h1>
+          <div class="video-container">
+            <div class="video-upload-container">
+              <video muted playsinline class="clickable-video">
+                <source src="/img/soda7.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <input
+                type="file"
+                name="media"
+                accept="image/*,video/*"
+                class="hidden-file-input"
+                onchange="previewFile(this)"
+              />
+              <span class="upload-icon" onclick="triggerFileInput(this)"
+                >+</span
+              >
+              <div class="file-name font-playwrite"></div>
+            </div>
+
+            <div class="video-upload-container">
+              <video muted playsinline class="clickable-video">
+                <source src="/img/soda8.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <input
+                type="file"
+                name="media1"
+                accept="image/*,video/*"
+                class="hidden-file-input"
+                onchange="previewFile(this)"
+              />
+              <span class="upload-icon" onclick="triggerFileInput(this)"
+                >+</span
+              >
+              <div class="file-name font-playwrite"></div>
+            </div>
+
+            <div class="video-upload-container">
+              <video muted playsinline class="clickable-video">
+                <source src="/img/soda9.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <input
+                type="file"
+                name="media2"
+                accept="image/*,video/*"
+                class="hidden-file-input"
+                onchange="previewFile(this)"
+              />
+              <span class="upload-icon" onclick="triggerFileInput(this)"
+                >+</span
+              >
+              <div class="file-name font-playwrite"></div>
+            </div>
+            </audio>
+          </div>
+        </div>
+      </div>
+      <div id="main-content2"  style="display: flex"> 
+        <div id="background-blur"></div> <!-- Background blur đặt đầu tiên -->
+        <h1>Happy Valentine's Day, Name</h1>
+        <div class="video-container">
+          <video muted playsinline>
+            <source src="/img/soda7.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <video muted playsinline>
+            <source src="/img/soda8.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <video muted playsinline>
+            <source src="/img/soda9.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <textarea name="text1" required class="body-input" id="special-text">Hết rồi, iu nhiềuu nắmmmm.❤️</textarea>
+    </div>
+    <div id="main-content2"  style="display: flex"> 
+        <div id="background-blur"></div> <!-- Background blur đặt đầu tiên -->
+        <h1>Happy Valentine's Day, Name</h1>
+        <div class="video-container">
+          <video muted playsinline>
+            <source src="/img/soda7.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <video muted playsinline>
+            <source src="/img/soda8.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <video muted playsinline>
+            <source src="/img/soda9.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="image-upload-container">
+            <img src="/img/soda1.png" alt="Uploaded Image" class="preview-image clickable-video" id="special-image" onclick="triggerFileInputImg(this)"/>
+            <input
+                type="file"
+                name="media3"
+                accept="image/*"
+                class="hidden-file-input"
+                onchange="previewFileImg(this)"
+            />
+            <span class="upload-icon" onclick="triggerFileInputImg(this)">+</span>
+        </div>
+    </div>
+    <div id="main-content2"  style="display: flex"> 
+      <div id="background-blur"></div> <!-- Background blur đặt đầu tiên -->
+      <h1>Happy Valentine's Day, Name</h1>
+      <div class="video-container">
+        <video muted playsinline>
+          <source src="/img/soda7.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <video muted playsinline>
+          <source src="/img/soda8.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <video muted playsinline>
+          <source src="/img/soda9.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="image-upload-container">
+          <img src="/img/soda6.jpg" alt="Uploaded Image" class="preview-image clickable-video" id="special-image" onclick="triggerFileInputImg(this)"/>
+          <input
+              type="file"
+              name="media4"
+              accept="image/*"
+              class="hidden-file-input"
+              onchange="previewFileImg(this)"
+          />
+          <span class="upload-icon" onclick="triggerFileInputImg(this)">+</span>
+      </div>
+  </div>
+  <div id="main-content2"  style="display: flex"> 
+    <div id="background-blur"></div> <!-- Background blur đặt đầu tiên -->
+    <h1>Happy Valentine's Day, Name</h1>
+    <div class="video-container">
+      <video muted playsinline>
+        <source src="/img/soda7.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <video muted playsinline>
+        <source src="/img/soda8.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <video muted playsinline>
+        <source src="/img/soda9.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="image-upload-container">
+        <img src="/img/soda5.jpg" alt="Uploaded Image" class="preview-image clickable-video" id="special-image" onclick="triggerFileInputImg(this)"/>
+        <input
+            type="file"
+            name="media5"
+            accept="image/*"
+            class="hidden-file-input"
+            onchange="previewFileImg(this)"
+        />
+        <span class="upload-icon" onclick="triggerFileInputImg(this)">+</span>
+    </div>
+</div>
+<div id="main-content2"  style="display: flex"> 
+  <div id="background-blur"></div> <!-- Background blur đặt đầu tiên -->
+  <h1>Happy Valentine's Day, Name</h1>
+  <div class="video-container">
+    <video muted playsinline>
+      <source src="/img/soda7.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <video muted playsinline>
+      <source src="/img/soda8.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <video muted playsinline>
+      <source src="/img/soda9.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <textarea name="text2" required class="body-input" id="special-text3">Giờ hết thật rồi nè, iu nhiềuu nắmmmm ❤️</textarea>
+</div>
+<div id="main-content3"  style="display: flex"> 
+  <p class="final-text">Click vào create để tạo trang web với các thông tin bạn đã nhập.</p>
+  <button type="submit" style="margin-bottom: 5px;">Create</button>
+</div>
+        
+      </div>
+    </form>
+    <script>
+      function triggerFileInput(element) {
+        // Tìm video hoặc icon được bấm vào
+        let container = element.closest('.video-upload-container');
+
+        // Tìm input file trong cùng container
+        let fileInput = container.querySelector('.hidden-file-input');
+
+        if (fileInput) {
+          fileInput.click();
+        }
+      }
+      function triggerFileInputImg(element) {
+    // Tìm container chứa ảnh hoặc video được bấm vào
+    let container = element.closest('.image-upload-container');
+
+    // Tìm input file trong cùng container
+    let fileInput = container.querySelector('.hidden-file-input');
+
+    if (fileInput) {
+        fileInput.click();
+    }
+}
+      function previewFile(input) {
+        let container = input.closest('.video-upload-container');
+        let video = container.querySelector('.clickable-video');
+        let fileNameDisplay = container.querySelector('.file-name');
+
+        if (input.files && input.files[0]) {
+          let file = input.files[0];
+          let fileURL = URL.createObjectURL(file);
+
+          if (file.type.startsWith('image/')) {
+            // Nếu là ảnh, thay video bằng ảnh
+            video.outerHTML = `<img src="${fileURL}" class="clickable-video" onclick="triggerFileInput(this)" style="width:85%; height:auto; cursor:pointer;" />`;
+          } else if (file.type.startsWith('video/')) {
+            // Nếu là video, thay source video
+            video.innerHTML = `<source src="${fileURL}" type="${file.type}" />`;
+            video.load();
+          }
+
+          // Hiển thị tên file bên dưới
+          fileNameDisplay.textContent = `Đã chọn: ${file.name}`;
+        }
+      }
+      function previewFileImg(input) {
+    let container = input.closest('.image-upload-container'); // Lấy container hình ảnh
+    let img = container.querySelector('.preview-image'); // Tìm ảnh hiện tại
+
+    if (input.files && input.files[0]) {
+        let file = input.files[0];
+        let fileURL = URL.createObjectURL(file);
+
+        if (file.type.startsWith('image/')) {
+            // Nếu là ảnh, thay đổi ảnh hiện tại
+            img.src = fileURL;
+        }
+    }
+}
+    </script>
+  </body>
+</html>
